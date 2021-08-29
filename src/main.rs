@@ -6,10 +6,17 @@
 extern crate clap;
 use clap::App;
 
+use inquire::Text;
+
 fn main() {
     // The YAML file is found relative to the current file, similar to how modules are found
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
 
-    // Same as previous examples...
+    let name = matches.value_of("name");
+ 
+    let test = Text::new("hi").prompt().unwrap();
+    println!("{}", test);
+        
+
 }
