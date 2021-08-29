@@ -37,6 +37,6 @@ args:
         short: tp
         long: template-path
         value_name: REPO_PATH
-        help: Currently unused. When used in combination with a template repo, this arg sets a specific path in the template repo to start from.
+        help: When used in combination with a template repo, this arg sets a specific path in the template repo to start from.
         takes_value: true
         required: false
