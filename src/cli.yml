@@ -1,0 +1,42 @@
+name: gh-start
+version: "0.0.1"
+author: Jason Antwi-Appah <hey@jasonaa.me>
+about: GH extension to start new repos from existing starters/templates
+args:
+    - name:
+        short: n
+        long: name
+        index: 1
+        value_name: NAME
+        help: Specify the name of the repo to be created.
+        takes_value: true
+        required: false
+    - path:
+        index: 2
+        short: p
+        long: path
+        value_name: PATH
+        help: Specify a path for the new repo to be cloned into. Defaults to the current working directory, or uses `fgh` to determine your preferred path.
+        takes_value: true
+        required: false
+    - auth:
+        short: a
+        long: auth
+        value_name: TOKEN
+        help: Use a supplied GitHub PAT for auth. when not supplied, defaults to using the token from `gh auth status -t`
+        takes_value: true
+        required: false
+    - template_repo:
+        short: r
+        long: repo
+        value_name: TEMPLATE
+        help: Specify a starter repository. Can be formatted like gh-start, jasonappah/gh-start, or as a valid URL linking to any Git repository.
+        takes_value: true
+        required: false
+    - template_repo_path:
+        short: tp
+        long: template-path
+        value_name: REPO_PATH
+        help: When used in combination with a template repo, this arg sets a specific path in the template repo to start from.
+        takes_value: true
+        required: false
